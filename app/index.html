@@ -1,0 +1,75 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <title>TicketyTackety</title>
+    
+    <meta name="description" content="A simple tic-tac-toe game for two players.">
+    <meta name="viewport" content="width=device-width">
+    
+    <link rel="stylesheet" href="styles/normalize.css" />
+    <link rel="stylesheet" href="styles/foundation.min.css" />
+    
+    <!-- build:css(.tmp) styles/main.css -->
+    <link rel="stylesheet" href="styles/main.css">
+    <!-- endbuild -->
+</head>
+  <body ng-app="Tickety">
+    <!--[if lt IE 7]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+    <!--[if lt IE 9]>
+      <script src="bower_components/es5-shim/es5-shim.js"></script>
+      <script src="bower_components/json3/lib/json3.min.js"></script>
+    <![endif]-->
+
+    <!-- Add your site or application content here -->
+    <h1><span class="tickety">Tickety</span><span class="tackety">Tackety</span></h1>
+    <div data-ng-controller="GameCtrl">
+      <div id="gameboard" data-ng-controller="BoardCtrl" data-ng-cloak>
+        <div id="row1" class="rw tr">
+          <div id="cell1" class="cll lt {{squares[0]}}" data-ng-click="makeMove(0)">{{squares[0]}}</div>
+          <div id="cell2" class="cll ct {{squares[1]}}" data-ng-click="makeMove(1)">{{squares[1]}}</div>
+          <div id="cell3" class="cll rt {{squares[2]}}" data-ng-click="makeMove(2)">{{squares[2]}}</div>
+        </div>
+        <div id="row2" class="rw mr">
+          <div id="cell4" class="cll lm {{squares[3]}}" data-ng-click="makeMove(3)">{{squares[3]}}</div>
+          <div id="cell5" class="cll cm {{squares[4]}}" data-ng-click="makeMove(4)">{{squares[4]}}</div>
+          <div id="cell6" class="cll rm {{squares[5]}}" data-ng-click="makeMove(5)">{{squares[5]}}</div>
+        </div>
+        <div id="row3" class="rw br">
+          <div id="cell7" class="cll lb {{squares[6]}}" data-ng-click="makeMove(6)">{{squares[6]}}</div>
+          <div id="cell8" class="cll cb {{squares[7]}}" data-ng-click="makeMove(7)">{{squares[7]}}</div>
+          <div id="cell9" class="cll rb {{squares[8]}}" data-ng-click="makeMove(8)">{{squares[8]}}</div>
+        </div>
+      </div>
+    
+      <div id="play-btn"><a href="" class="large button success" data-ng-click="newGame()">Play now!</a></div>
+    </div>
+    
+    
+    <script src="bower_components/jquery/jquery.js"></script>
+    <script src="bower_components/underscore/underscore.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
+		<script src="https://cdn.firebase.com/v0/firebase.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/angularFire/0.2.0/angularfire.min.js"></script>
+
+    <!-- build:js scripts/modules.js -->
+    <script src="bower_components/angular-resource/angular-resource.js"></script>
+    <script src="bower_components/angular-cookies/angular-cookies.js"></script>
+    <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+    <!-- endbuild -->
+
+    <!-- build:js({.tmp,app}) scripts/scripts.js -->
+    <script src="scripts/app.js"></script>
+    <script src="scripts/services/fb.js"></script>
+    <script src="scripts/controllers/game.js"></script>
+    <!-- endbuild -->
+</body>
+</html>
