@@ -6,7 +6,6 @@ angular.module('Tickety.services', [])
       link: function(scope, playerId) {
         var ref = new Firebase('https://tickety.firebaseio.com/queue');
         ref.transaction(function(currentData) {
-          var x = currentData; console.log(x);
           if (currentData === null) {
             var game = ref.parent().child('games').push({
               player1: playerId
